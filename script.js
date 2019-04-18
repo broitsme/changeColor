@@ -1,10 +1,12 @@
-let initialColIndex = 0; 
 function changeColor(){
-    let colors = ["red","green","blue","yellow","black","firebrick"];
-    let colorIndex = parseInt(Math.random() * colors.length);
-    if(initialColIndex === colorIndex){
-        colorIndex = Math.abs(colorIndex-1);
-    } 
-    document.body.style.backgroundColor = colors[colorIndex];
-    initialColIndex = colorIndex;    
+    document.body.style.backgroundColor = getRandomColor();
+    console.log( document.body.style.backgroundColor);
 }
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
